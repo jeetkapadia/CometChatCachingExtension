@@ -1,0 +1,11 @@
+framework module CachingExtension {
+  umbrella header "CachingExtension.h"
+
+  export *
+  module * { export * }
+}
+
+module CachingExtension.Swift {
+    header "CachingExtension-Swift.h"
+    requires objc
+}
