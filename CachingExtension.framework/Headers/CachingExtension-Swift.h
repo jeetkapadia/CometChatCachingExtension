@@ -192,38 +192,61 @@ SWIFT_CLASS("_TtC16CachingExtension16CachingExtension")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UserObject;
 @class RLMRealm;
 @class RLMObjectSchema;
 @class RLMSchema;
 
 SWIFT_CLASS("_TtC16CachingExtension7Message")
 @interface Message : RealmSwiftObject
+@property (nonatomic) NSInteger cacheID;
 @property (nonatomic) NSInteger id;
 @property (nonatomic, copy) NSString * _Nonnull muid;
 @property (nonatomic, copy) NSString * _Nonnull senderUid;
 @property (nonatomic, copy) NSString * _Nonnull receiverUid;
-@property (nonatomic) enum MessageType messageType;
-@property (nonatomic) enum ReceiverType receiverType;
+@property (nonatomic) NSInteger messageType;
+@property (nonatomic) NSInteger receiverType;
 @property (nonatomic) NSInteger sentAt;
 @property (nonatomic, copy) NSString * _Nonnull status;
-@property (nonatomic) enum MessageCategory messageCategory;
-@property (nonatomic, copy) NSString * _Nonnull sender;
+@property (nonatomic) NSInteger messageCategory;
+@property (nonatomic, strong) UserObject * _Nonnull sender;
 @property (nonatomic, copy) NSString * _Nonnull metaData;
 @property (nonatomic) double deliveredAt;
 @property (nonatomic) double readAt;
 @property (nonatomic) double deliveredToMeAt;
 @property (nonatomic) double readByMeAt;
 @property (nonatomic, copy) NSString * _Nonnull message;
+@property (nonatomic) double deletedAt;
+@property (nonatomic) double editedAt;
+@property (nonatomic, copy) NSString * _Nonnull deletedBy;
+@property (nonatomic, copy) NSString * _Nonnull editedBy;
+@property (nonatomic, copy) NSString * _Nonnull filePath;
+@property (nonatomic, copy) NSString * _Nonnull fileURL;
+@property (nonatomic, copy) NSString * _Nonnull fileCaption;
+@property (nonatomic, copy) NSString * _Nonnull customData;
+@property (nonatomic, copy) NSString * _Nonnull customSubtype;
++ (NSString * _Nullable)primaryKey SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithRealm:(RLMRealm * _Nonnull)realm schema:(RLMObjectSchema * _Nonnull)schema OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithValue:(id _Nonnull)value schema:(RLMSchema * _Nonnull)schema OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-SWIFT_CLASS("_TtC16CachingExtension3dog")
-@interface dog : RealmSwiftObject
+SWIFT_CLASS("_TtC16CachingExtension10UserObject")
+@interface UserObject : RealmSwiftObject
+@property (nonatomic, copy) NSString * _Nonnull uid;
 @property (nonatomic, copy) NSString * _Nonnull name;
-@property (nonatomic) NSInteger age;
+@property (nonatomic, copy) NSString * _Nonnull email;
+@property (nonatomic, copy) NSString * _Nonnull avatar;
+@property (nonatomic, copy) NSString * _Nonnull link;
+@property (nonatomic, copy) NSString * _Nonnull role;
+@property (nonatomic, copy) NSString * _Nonnull metadata;
+@property (nonatomic) NSInteger credits;
+@property (nonatomic, copy) NSString * _Nonnull statusMessage;
+@property (nonatomic) double lastActiveAt;
+@property (nonatomic) BOOL hasBlockedMe;
+@property (nonatomic) BOOL blockedByMe;
+@property (nonatomic) enum UserStatus status;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithRealm:(RLMRealm * _Nonnull)realm schema:(RLMObjectSchema * _Nonnull)schema OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithValue:(id _Nonnull)value schema:(RLMSchema * _Nonnull)schema OBJC_DESIGNATED_INITIALIZER;
