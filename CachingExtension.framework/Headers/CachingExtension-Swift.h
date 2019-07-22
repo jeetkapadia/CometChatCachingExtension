@@ -205,6 +205,7 @@ SWIFT_CLASS("_TtC16CachingExtension7Message")
 @property (nonatomic, copy) NSString * _Nonnull senderUid;
 @property (nonatomic, copy) NSString * _Nonnull receiverUid;
 @property (nonatomic) NSInteger messageType;
+@property (nonatomic) double updatedAt;
 @property (nonatomic) NSInteger receiverType;
 @property (nonatomic) NSInteger sentAt;
 @property (nonatomic, copy) NSString * _Nonnull status;
